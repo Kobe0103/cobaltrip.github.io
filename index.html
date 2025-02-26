@@ -148,6 +148,71 @@
         ::-webkit-scrollbar-thumb:hover {
           background: #454545;
         }
+
+        /* Features Section */
+        .features {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+
+        .feature {
+            border: 1px solid #454545;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .feature-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #1a1a1a;
+        }
+
+        .feature-header h1 {
+            font-size: 2.5vh;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .toggle-button {
+            background: none;
+            border: none;
+            color: #D3D3D3;
+            font-size: 2.5vh;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .feature.active .toggle-button {
+            transform: rotate(45deg); /* Turns + into - */
+        }
+
+        .feature-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0 10px;
+            border-top: 1px solid #454545;
+        }
+
+        .feature-content ul {
+            list-style-type: none;
+            padding: 10px 0;
+        }
+
+        .feature-content li {
+            font-size: 2vh;
+            margin-bottom: 5px;
+        }
+
+        .feature.active .feature-content {
+            max-height: 200px; /* Adjust based on content height */
+            padding: 10px;
+        }
     </style>
 </head>
 
@@ -183,15 +248,29 @@
     </section>
 
     <section id="features" class="full-screen">
-        <div class="kenter">
+        <div class="center">
             <h1 style="font-size: 5vh; margin-top: 10px;">Upcoming Features</h1>
             <div class="features">
                 <div class="feature">
-                    <h1>Utilities</h1>
-                    <ul>
+                    <div class="feature-header">
+                        <h1>Utilities</h1>
+                        <button class="toggle-button">+</button>
+                    </div>
+                    <ul class="feature-content">
                         <li>AutoDojo - Automatically does dojo for you</li>
                         <li>AutoHarp - Automatically does harp/melody for you</li>
-                        <li>AutoExpirements - Automatically does expirements for you</li>
+                        <li>AutoExperiments - Automatically does experiments for you</li>
+                    </ul>
+                </div>
+                <div class="feature">
+                    <div class="feature-header">
+                        <h1>Another Feature</h1>
+                        <button class="toggle-button">+</button>
+                    </div>
+                    <ul class="feature-content">
+                        <li>Feature 1</li>
+                        <li>Feature 2</li>
+                        <li>Feature 3</li>
                     </ul>
                 </div>
             </div>
@@ -241,6 +320,38 @@
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
+                });
+            });
+        });
+
+        // Feature Toggle Functionality
+        document.addEventListener("DOMContentLoaded", function () {
+            const features = document.querySelectorAll(".feature");
+
+            features.forEach((feature) => {
+                const header = feature.querySelector(".feature-header");
+                const content = feature.querySelector(".feature-content");
+                const toggleButton = feature.querySelector(".toggle-button");
+
+                header.addEventListener("click", () => {
+                    // Close all other features
+                    features.forEach((f) => {
+                        if (f !== feature && f.classList.contains("active")) {
+                            f.classList.remove("active");
+                            f.querySelector(".feature-content").style.maxHeight = "0";
+                            f.querySelector(".toggle-button").textContent = "+";
+                        }
+                    });
+
+                    // Toggle the clicked feature
+                    feature.classList.toggle("active");
+                    if (feature.classList.contains("active")) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        toggleButton.textContent = "-";
+                    } else {
+                        content.style.maxHeight = "0";
+                        toggleButton.textContent = "+";
+                    }
                 });
             });
         });
