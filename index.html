@@ -148,7 +148,6 @@
           background: #454545;
         }
 
-        /* Features Section */
         .features {
             width: 100%;
             max-width: 600px;
@@ -189,7 +188,7 @@
         }
 
         .feature.active .toggle-button {
-            transform: rotate(0deg); /* Minus sign remains horizontal */
+            transform: rotate(0deg); 
         }
 
         .feature-content {
@@ -199,17 +198,17 @@
             padding: 0 10px;
             text-align: left;
             background-color: #000005;
-            width: 95%; /* Set width to 95% of the container */
-            margin: 0 auto; /* Center the content */
+            width: 95%; 
+            margin: 0 auto; 
         }
     
         .feature-content ul {
-            list-style-type: disc; /* Add bullet points */
-            padding-left: 20px; /* Indent bullet points */
+            list-style-type: disc; 
+            padding-left: 20px; 
         }
         
         .feature.active .feature-content {
-            max-height: 1000px; /* Expand fully to show all text */
+            max-height: 1000px; 
             padding: 10px;
         }
     </style>
@@ -314,7 +313,6 @@
             });
         });
 
-        // Feature Toggle Functionality
         document.addEventListener("DOMContentLoaded", function () {
             const features = document.querySelectorAll(".feature");
 
@@ -324,7 +322,6 @@
                 const toggleButton = feature.querySelector(".toggle-button");
 
                 header.addEventListener("click", () => {
-                    // Close all other features
                     features.forEach((f) => {
                         if (f !== feature && f.classList.contains("active")) {
                             f.classList.remove("active");
@@ -333,11 +330,10 @@
                         }
                     });
 
-                    // Toggle the clicked feature
                     feature.classList.toggle("active");
                     if (feature.classList.contains("active")) {
                         content.style.maxHeight = content.scrollHeight + "px";
-                        toggleButton.textContent = "−"; // Horizontal minus sign
+                        toggleButton.textContent = "−";
                     } else {
                         content.style.maxHeight = "0";
                         toggleButton.textContent = "+";
