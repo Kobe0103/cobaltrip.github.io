@@ -1,157 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cobalt</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobalt</title>
+    <link rel="icon" type="image/x-icon" href="https://em-content.zobj.net/source/apple/271/fish_1f41f.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="fade-in">
-    <div class="header-content">
-      <img src="https://cdn.discordapp.com/icons/1325571365079879774/daf827a0aba55622813ed5ba73f6e342.webp?size=96" alt="Cobalt Logo" class="logo">
-      <div>
-        <h1>Cobalt</h1>
-        <p>Your all-in-one automation solution for enhanced gameplay.</p>
-      </div>
-    </div>
-    <nav>
-      <a href="#features">Features</a>
-      <a href="#eta">ETA</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <div class="container">
-    <section id="features" class="fade-in">
-      <div class="feature-section glass">
-        <h2>Fishing</h2>
-        <ul>
-          <li>Barn Fishing (5 in CI, 20 in CH, 60 in Hub)</li>
-          <li>AntiAFK (wiggle mouse)</li>
-          <li>Auto Kill</li>
-          <li>Place Totem & Flare Automatically</li>
-          <li>Fish up mobs (Packet Receive Event)</li>
-          <li>Trophy fishing (Golden Fish)</li>
-        </ul>
-      </div>
-      <div class="feature-section glass">
-        <h2>Foraging</h2>
-        <ul>
-          <li>Fill chests with saplings and bone meal</li>
-        </ul>
-      </div>
-      <div class="feature-section glass">
-        <h2>Slayer</h2>
-        <ul>
-          <li>Mob Killer (Spawn)</li>
-          <li>Adapt play style for different slayer types</li>
-          <li>Daedalus axe swap before kill</li>
-        </ul>
-      </div>
-
-      <div id="hidden-features" class="hidden">
-        <div class="feature-section glass">
-          <h2>Utilities</h2>
-          <ul>
-            <li>Auto Enchanting Table</li>
-            <li>AutoDojo</li>
-            <li>Auto Heal</li>
-            <li>Auto Sell (To BZ and NPC also throw out items)</li>
-          </ul>
+    <section id="home" class="full-screen">
+        <div class="center">
+            <h1 id="title">C O B A L T</h1>
+            <h1 id="description">A free QOL mod filled to the brim with features</h1>
+            <div class="buttons">
+                <a href="#download" class="btn download">Download</a>
+                <a href="#info" class="btn discord">About Us</a>
+            </div>
         </div>
-        <div class="feature-section glass">
-          <h2>Failsafes</h2>
-          <ul>
-            <li>Teleport</li>
-            <li>Rotation</li>
-            <li>Player</li>
-            <li>Item Change</li>
-            <li>Death</li>
-            <li>World Change</li>
-            <li>Evacuate (Server Closing)</li>
-          </ul>
-        </div>
-        <div class="feature-section glass">
-          <h2>Farming</h2>
-          <ul>
-            <li>Simple Macro</li>
-            <li>Pest Killer</li>
-            <li>Visitor Macro</li>
-          </ul>
-        </div>
-        <div class="feature-section glass">
-          <h2>Mining</h2>
-          <ul>
-            <li>Mining Bot</li>
-            <li>Route Miner</li>
-            <li>Dwarven & Glacial Commissions</li>
-          </ul>
-        </div>
-        <div class="feature-section glass">
-          <h2>Pathfinder</h2>
-          <ul>
-            <li>Fly Executor</li>
-            <li>Fractional Navigation (small spaces)</li>
-            <li>World Caching</li>
-          </ul>
-        </div>
-        <div class="feature-section glass">
-          <h2>GUI</h2>
-          <ul>
-            <li>Implement my own UI with the help of elementa</li>
-          </ul>
-        </div>
-        <div class="feature-section glass">
-          <h2>HUD</h2>
-          <ul>
-            <li>Skill XP tracker</li>
-            <li>Money per hour tracker (based off inventory)</li>
-            <li>Uptime tracker</li>
-          </ul>
-        </div>
-        <div class="feature-section glass">
-          <h2>Discord Bot Remote Control</h2>
-          <ul>
-            <li>Sell Command</li>
-            <li>Toggle Macro Command</li>
-            <li>Info Command</li>
-            <li>Ping @everyone if failsafe is triggered (configurable)</li>
-            <li>Send info updated every 5 minutes (configurable)</li>
-          </ul>
-        </div>
-        <div class="feature-section glass">
-          <h2>Rift Macros</h2>
-          <ul>
-            <li>Tiny Dancer Talisman</li>
-            <li>Berberis Farmer</li>
-            <li>Rift Mob Killer</li>
-            <li>Agaricus Farmer</li>
-            <li>Cadcodous Farmer</li>
-          </ul>
-        </div>
-        <div class="feature-section glass">
-          <h2>F7 Frag Bot</h2>
-          <ul>
-            <li>Navigate to wither door while killing mobs for key</li>
-          </ul>
-        </div>
-      </div>
-
-      <button id="expand-button" class="expand-button">Show All Features</button>
     </section>
 
-    <section id="eta" class="fade-in glass">
-      <h2>Estimated Completion</h2>
-      <p>Before <strong>2026</strong></p>
+    <section id="download" class="full-screen">
+        <div class="center">
+            <h1 style="font-size: 5vh;">Downloads</h1>
+            <h1 id="description">Download the mod here!</h1>
+            <div class="buttons">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn download">1.21.4 Fabric</a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn discord">1.8.9 Forge</a>
+            </div>
+        </div>
     </section>
-  </div>
 
-  <footer id="contact" class="fade-in glass">
-    <p>Join our Discord: <a href="https://discord.gg/UMrUUsfKvU" target="_blank">Cobalt Discord</a></p>
-    <p>&copy; 2025 Cobalt. All rights reserved.</p>
-  </footer>
+    <section id="features" class="full-screen">
+        <div class="center">
+            <h1 style="font-size: 5vh; margin-top: 10px;">Upcoming Features</h1>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-header">
+                        <h1>Utilities</h1>
+                        <button class="toggle-button">+</button>
+                    </div>
+                    <div class="feature-content">
+                        <ul>
+                            <li>AutoDojo - Automatically does dojo for you</li>
+                            <li>AutoHarp - Automatically does harp/melody for you</li>
+                            <li>AutoExperiments - Automatically does experiments for you</li>
+                            <p class="invis_shit">hello</p> <!-- NEVER DELETE THIS LINE!!!!!!!!!!!!!!!!! OR I WILL KILL YOU!!!!!!!! -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <section id="info" class="full-screen">
+        <div class="center">
+            <h1 style="font-size: 5vh;">About Us</h1>
+            <h1 id="description">Premium features for FREE. Brought to you by a team of "highly" skilled developers:</h1>
+            <div class="developers">
+                <div class="person">
+                    <img src="https://cdn.discordapp.com/avatars/1324116012240732172/a279a79611d36e20534eb8abd38fa99b.png" alt="Nathan" class="person-image">
+                    <div class="person-text">
+                        <h1 style="font-weight: 350; font-size: 15px;">Nathan</h1>
+                        <p>On the spectrum</p>
+                    </div>
+                </div>
+                <div class="person">
+                    <img src="https://cdn.discordapp.com/avatars/697415764306821141/5b26ed78e66734e98ec070c95b3e7762.png" alt="Nima0908" class="person-image">
+                    <div class="person-text">
+                        <h1 style="font-weight: 350; font-size: 15px;">Nima0908</h1>
+                        <p>Locked in a basement</p>
+                    </div>
+                </div>
+                <div class="person">
+                    <img src="https://cdn.discordapp.com/avatars/855798460593733652/79549714d67ed70ac29c71fb258d9f29.png" alt="Twiston" class="person-image">
+                    <div class="person-text">
+                        <h1 style="font-weight: 350; font-size: 15px;">Twiston</h1>
+                        <p>"I like frogs"</p>
+                    </div>
+                </div>
+                <div class="person">
+                    <img src="https://cdn.discordapp.com/avatars/1187752214429712508/c56ede65ab9588869a61b94374f4536a.webp?size=80" alt="Ko BÄÄÄ" class="person-image">
+                    <div class="person-text">
+                        <h1 style="font-weight: 350; font-size: 15px;">Ko BÄÄÄ</h1>
+                        <p>I made this site brick-by-brick</p>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <a href="https://discord.gg/32YarQ3NfV" class="btn discord">Join the Discord!</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>

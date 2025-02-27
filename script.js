@@ -1,30 +1,39 @@
+document.body.classList.add("loaded");
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
-
-    if (targetSection) {
-      const headerHeight = document.querySelector('header').offsetHeight;
-      const targetPosition = targetSection.offsetTop - headerHeight;
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
-    }
-  });
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
 
-document.getElementById('expand-button').addEventListener('click', function () {
-  const hiddenFeatures = document.getElementById('hidden-features');
-  const button = document.getElementById('expand-button');
+document.addEventListener("DOMContentLoaded", function () {
+    const features = document.querySelectorAll(".feature");
 
-  if (hiddenFeatures.classList.contains('hidden')) {
-    hiddenFeatures.classList.remove('hidden');
-    button.textContent = 'Hide Features';
-  } else {
-    hiddenFeatures.classList.add('hidden');
-    button.textContent = 'Show All Features';
-  }
+    features.forEach((feature) => {
+        const header = feature.querySelector(".feature-header");
+        const content = feature.querySelector(".feature-content");
+        const toggleButton = feature.querySelector(".toggle-button");
+
+        header.addEventListener("click", () => {
+            features.forEach((f) => {
+                if (f !== feature && f.classList.contains("active")) {
+                    f.classList.remove("active");
+                    f.querySelector(".feature-content").style.maxHeight = "0";
+                    f.querySelector(".toggle-button").textContent = "+";
+                }
+            });
+
+            feature.classList.toggle("active");
+            if (feature.classList.contains("active")) {
+                content.style.maxHeight = content.scrollHeight + "px";
+                toggleButton.textContent = "−";
+            } else {
+                content.style.maxHeight = "0";
+                toggleButton.textContent = "+";
+            }
+        });
+    });
 });
