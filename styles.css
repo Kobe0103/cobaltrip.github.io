@@ -1,179 +1,207 @@
-/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #000005;
+    color: #D3D3D3;
+    font-family: "Exo 2", serif;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow-x: hidden;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #0a0a0f;
-  color: #e0e0e0;
-  line-height: 1.6;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
 }
 
-h1, h2, h3 {
-  font-weight: 600;
-  color: #ffffff;
+body.loaded {
+    opacity: 1;
 }
 
-a {
-  color: #00bfff;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: 150%;
 }
 
-a:hover {
-  color: #8a2be2;
+#title {
+    display: block;
+    font-size: 5vh;
 }
 
-/* Glassmorphism Effect */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+#description {
+    display: block;
+    font-size: 2.5vh;
+    font-weight: 300;
+    margin-top: 10px;
 }
 
-/* Header */
-header {
-  padding: 20px 40px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.developers {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
 }
 
-header .logo {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+.person {
+    border: 1px solid #454545;
+    font-size: 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
+    background-color: #000005;
 }
 
-header .header-content {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.person-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 1px solid #454545;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2em;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.person-text {
+    text-align: left;
+    font-weight: 300;
 }
 
-header p {
-  margin: 0;
-  font-size: 1em;
-  color: #e0e0e0;
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-/* Navigation */
-nav {
-  display: flex;
-  gap: 20px;
+.btn {
+    text-decoration: none;
+    font-size: 2vh;
+    font-weight: 300;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    border: 2px solid transparent;
+    background-color: #000005;
 }
 
-nav a {
-  font-size: 1em;
-  color: #e0e0e0;
-  padding: 8px 16px;
-  border-radius: 8px;
-  transition: background 0.3s ease, color 0.3s ease;
+.btn:hover {
+    transform: scale(1.1);
 }
 
-nav a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #8a2be2;
+.discord {
+    background: #5865F2;
+    color: white;
 }
 
-/* Container */
-.container {
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+.download {
+    background: #28a745;
+    color: white;
 }
 
-/* Feature Sections */
-.feature-section {
-  margin-bottom: 40px;
-  padding: 20px;
+.full-screen {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.feature-section h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #e0e0e0;
-  position: relative;
+::-webkit-scrollbar {
+    width: 5px;
 }
 
-.feature-section h2::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 50px;
-  height: 2px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+::-webkit-scrollbar-track {
+    background: #000005;
 }
 
-.feature-section ul {
-  list-style-type: none;
-  padding: 0;
+::-webkit-scrollbar-thumb {
+    background: #454545;
 }
 
-.feature-section ul li {
-  background: rgba(255, 255, 255, 0.05);
-  margin: 10px 0;
-  padding: 15px;
-  border-radius: 8px;
-  transition: transform 0.3s ease, background 0.3s ease;
+::-webkit-scrollbar-thumb:hover {
+    background: #454545;
 }
 
-.feature-section ul li:hover {
-  transform: translateX(10px);
-  background: rgba(255, 255, 255, 0.1);
+.features {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
 }
 
-/* Hidden Features */
-.hidden {
-  display: none;
+.feature {
+    border: 1px solid #454545;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-color: #000005;
 }
 
-/* Expand Button */
-.expand-button {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #e0e0e0;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
+.feature-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #000005;
+    border-bottom: 1px solid #454545;
 }
 
-.expand-button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: #8a2be2;
+.feature-header h1 {
+    font-size: 2.5vh;
+    font-weight: 400;
+    margin: 0;
+    text-align: left;
 }
 
-/* ETA Section */
-#eta {
-  text-align: center;
-  padding: 40px 20px;
-  margin-top: 40px;
+.toggle-button {
+    background: none;
+    border: none;
+    color: #D3D3D3;
+    font-size: 2.5vh;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+.feature.active .toggle-button {
+    transform: rotate(0deg);
 }
 
-footer p {
-  margin: 5px 0;
-  color: #e0e0e0;
+.feature-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    padding: 0 10px;
+    text-align: left;
+    font-size: larger;
+    background-color: #000005;
+    width: 100%;
+}
+
+.feature-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.feature.active .feature-content {
+    max-height: 1000px;
+    padding: 10px;
+}
+
+.invis_shit {
+    color: #000005;
+    size: 1;
 }
