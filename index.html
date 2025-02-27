@@ -199,19 +199,15 @@
             padding: 0 10px;
             text-align: left;
             background-color: #000005;
+            width: 95%; /* Set width to 95% of the container */
+            margin: 0 auto; /* Center the content */
         }
-
+    
         .feature-content ul {
             list-style-type: disc; /* Add bullet points */
             padding-left: 20px; /* Indent bullet points */
-            width: 95%; /* Set width to 95% for better alignment */
         }
-
-        .feature-content li {
-            font-size: 2vh;
-            margin-bottom: 5px;
-        }
-
+        
         .feature.active .feature-content {
             max-height: 1000px; /* Expand fully to show all text */
             padding: 10px;
@@ -259,22 +255,13 @@
                         <h1>Utilities</h1>
                         <button class="toggle-button">+</button>
                     </div>
-                    <ul class="feature-content">
-                        <li>AutoDojo - Automatically does dojo for you</li>
-                        <li>AutoHarp - Automatically does harp/melody for you</li>
-                        <li>AutoExperiments - Automatically does experiments for you</li>
-                    </ul>
-                </div>
-                <div class="feature">
-                    <div class="feature-header">
-                        <h1>Another Feature</h1>
-                        <button class="toggle-button">+</button>
+                    <div class="feature-content">
+                        <ul>
+                            <li>AutoDojo - Automatically does dojo for you</li>
+                            <li>AutoHarp - Automatically does harp/melody for you</li>
+                            <li>AutoExperiments - Automatically does experiments for you</li>
+                        </ul>
                     </div>
-                    <ul class="feature-content">
-                        <li>Feature 1</li>
-                        <li>Feature 2</li>
-                        <li>Feature 3</li>
-                    </ul>
                 </div>
             </div>
         </div>
